@@ -1,7 +1,7 @@
-.PHONY: encode
+.PHONY: config
 SHELL = /bin/bash
 .ONESHELL:
-encode:
+config:
 	@read -p "EDL App UID      : " uid
 	@read -p "EDL App Client ID: " clientid
 	@read -s -p "Password      : " password
