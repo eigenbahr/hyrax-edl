@@ -7,6 +7,7 @@ Login application needs to be a `401` application, not `OAuth` or
 `EULA`.
 
 **IMPORTANT**
+
 In your EDL application's configuration, add the redirect URL:
 `http://localhost:8080/opendap/login/urs`.
 
