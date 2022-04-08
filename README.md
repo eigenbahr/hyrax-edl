@@ -6,8 +6,9 @@ An Earthdata Login application in the UAT environment. The Earthdata
 Login application needs to be a `401` application, not `OAuth` or
 `EULA`.
 
-**IMPORTANT** In your EDL application's configuration, add the
-redirect URL: `http://localhost:8080/opendap/login/urs`.
+**IMPORTANT**
+In your EDL application's configuration, add the redirect URL:
+`http://localhost:8080/opendap/login/urs`.
 
 ### Create configuration file
 
