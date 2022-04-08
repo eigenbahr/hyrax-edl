@@ -12,7 +12,7 @@ From the commandline, run:
 
     $ make config
 
-Entering your Earthdata Login application's uid (the readable userid),
+Enter your Earthdata Login application's uid (the readable userid),
 the EDL app's client id (unreadable), and the app's password. The make
 target will create a new file `user-access.xml` using the values
 you've supplied.
@@ -20,8 +20,8 @@ you've supplied.
 ### Add data
 
 To test with specific data, place it in the `mydata` subdirectory of
-the project. This will be mounted into the container and be available
-to Hyrax at the top-level.
+the project. This will be mounted into the container and will be
+available to Hyrax at the top-level.
 
 ### Run the Hyrax container
 
