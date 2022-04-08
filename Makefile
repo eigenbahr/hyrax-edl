@@ -8,15 +8,16 @@ config:
 	echo
 	echo
 	export CLIENT_ID=$$clientid
-	mashup=$$uid:$$password
 	export ENCODED_AUTH=`echo -n $$uid:$$password | base64`
 	envsubst < user-access.xml.template > user-access.xml
+	echo "Configuration file `user-access.xml` has been created."
 
 run:
+	mkdir -p mydata
 	docker run -d -h hyrax -p 8080:8080 --name=hyrax \
 		--volume ${PWD}/user-access.xml:/usr/share/tomcat/webapps/opendap/WEB-INF/conf/user-access.xml \
 		--volume ${PWD}/web.xml:/usr/share/tomcat/webapps/opendap/WEB-INF/web.xml \
-		--volume ${PWD}/data/:/usr/share/hyrax \
+		--volume ${PWD}/mydata/:/usr/share/hyrax/mydata \
 		opendap/hyrax:snapshot
 
 shell:

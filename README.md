@@ -1,5 +1,11 @@
 ## Standalone Hyrax integrated with Earthdata Login
 
+### Prerequisites
+
+An Earthdata Login application in the UAT environment. The Earthdata
+Login application needs to be a `401` application, not `OAuth` or
+`EULA`.
+
 ### Create configuration file
 
 From the commandline, run:
@@ -10,6 +16,12 @@ Entering your Earthdata Login application's uid (the readable userid),
 the EDL app's client id (unreadable), and the app's password. The make
 target will create a new file `user-access.xml` using the values
 you've supplied.
+
+### Add data
+
+To test with specific data, place it in the `mydata` subdirectory of
+the project. This will be mounted into the container and be available
+to Hyrax at the top-level.
 
 ### Run the Hyrax container
 
@@ -29,12 +41,3 @@ Changes to the two config files will be reflected in the running
 container. But to stop it and delete the container, run:
 
     $ make stop
-
-## Notes
-
-The Earthdata Login application needs to be a `401` application, not
-`OAuth` or `EULA`. Be sure the Earthdata Login application is defined
-in the UAT environment!
-
-To test with specific data, place it in the `data` subdirectory. This
-will be mounted into the container and be available to Hyrax.
